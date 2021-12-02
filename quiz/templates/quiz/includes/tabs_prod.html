@@ -1,0 +1,153 @@
+{% load otree i18n %}
+
+<div id="tab-area">
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Instruction')">{% blocktrans %}Instruction{% endblocktrans %}</button>
+    <button class="tablinks" onclick="openCity(event, 'Simulation')">{% blocktrans %}Simulation{% endblocktrans %}</button>
+    <button class="tablinks" onclick="openCity(event, 'Periods')">{% blocktrans %}Number of periods{% endblocktrans %}</button>
+    <button class="tablinks" onclick="openCity(event, 'Decision')">{% blocktrans %}Decision{% endblocktrans %}</button>
+    <button class="tablinks" onclick="openCity(event, 'Rewards')">{% blocktrans %}Rewards{% endblocktrans %}</button>
+</div>
+
+<div id="Instruction" class="tabcontent">
+    <p>{% blocktrans %}Please click the other tabs to check the instruction if you want.{% endblocktrans %}</p>
+</div>
+
+<div id="Simulation" class="tabcontent">
+    <p>{% blocktrans %}In this simulation you will make financial decisions over time.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}The simulation consists of six rounds.
+        Each round lasts several periods.{% endblocktrans %}</p>
+</div>
+
+<div id="Periods" class="tabcontent">
+    <p>{% blocktrans %}At the beginning of a round, there will be three decks of cards.
+        Each deck will have a different number of <b><span style="color: red">red</span></b> and <b><span style="color: green">green</span></b> cards.{% endblocktrans %}</p>
+
+    <table id="info_table" style="width: 46%">
+        <colgroup>
+           <col span="1" style="width: 10%;">
+           <col span="1" style="width: 18%;">
+           <col span="1" style="width: 18%;">
+        </colgroup>
+
+    <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+        <tbody>
+            <tr>
+                <th><b>{% blocktrans %}Deck{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: green">Green cards</span>{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: red">Red cards</span>{% endblocktrans %}</b></th>
+            </tr>
+            <tr><td>A</td><td>3</td><td>3</td></tr>
+            <tr><td>B</td><td>4</td><td>2</td></tr>
+            <tr><td>C</td><td>5</td><td>1</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <p>{% blocktrans %}In period 1, the computer will randomly choose and remove one deck of cards,
+        and you will proceed to period 2.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 2, the computer will randomly choose and remove a second deck of cards,
+        and you will proceed to the period 3.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 3, 4 and 5, you will draw a random card from the remaining deck.
+        If you draw a <span style="color: green">green</span> card,
+        you will proceed to the next period and the same deck (with same number of cards) will be used again.
+        If you draw a <span style="color: red">red</span> card, the round will end.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 6 (if you reach it), the round will end automatically.{% endblocktrans %}</p>
+</div>
+
+<div id="Decision" class="tabcontent">
+    <p>{% blocktrans %}You will start a round with 11.92 points in your <b>Account Balance</b>.
+        You will <b>not</b> be given more points in the same round.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}At the beginning of each period, you will decide how many points to spend.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}Your <b>Spending</b> in each period will be deducted from your <b>Account Balance</b>.
+        At the end of a round, any points left in your <b>Account</b> will be lost.{% endblocktrans %}</p>
+</div>
+
+<div id="Rewards" class="tabcontent">
+    <p>{% blocktrans %}At the end of a round, we will calculate your <b>Total Points Reward</b> for that round
+        as the <b>product</b> of your <b>Spending</b> of all periods in which you made decisions.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}If, for instance, a round lasted 5 periods,
+        we will multiply the values of your Euro Rewards for these 5 periods.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}Your <b>Total Points Reward</b> in a round will be converted into <b>Euro Rewards</b>
+        at a rate of &euro; 1.00 = 4 points.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}At the end of the simulation, the computer will randomly select one of the 6 rounds.
+        You will receive the <b>Total Euro Reward</b> for that round as an additional compensation.{% endblocktrans %}</p>
+</div>
+
+<br>
+
+<script>
+    function openCity(evt, cityName) {
+        event.preventDefault();
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    // document.getElementById("defaultOpen").click();
+</script>
+
+<style>
+    /* Style the tab */
+    #tab-area {
+        padding-left: 10px;
+    }
+
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 850px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        width: 850px;
+    }
+</style>

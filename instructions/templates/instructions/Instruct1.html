@@ -1,0 +1,68 @@
+{% extends "instructions/Page.html" %}
+{% load otree i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h3>
+    <br>
+    {% blocktrans %}Number of periods in a round{% endblocktrans %}
+    </h3>
+
+    <p>{% blocktrans %}At the beginning of a round, there will be three decks of cards.
+        Each deck will have a different number of <b><span style="color: red">red</span></b> and <b><span style="color: green">green</span></b> cards.{% endblocktrans %}</p>
+
+    <table id="info_table" style="width: 46%">
+        <colgroup>
+           <col span="1" style="width: 10%;">
+           <col span="1" style="width: 18%;">
+           <col span="1" style="width: 18%;">
+        </colgroup>
+
+    <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+        <tbody>
+            <tr>
+                <th><b>{% blocktrans %}Deck{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: green">Green cards</span>{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: red">Red cards</span>{% endblocktrans %}</b></th>
+            </tr>
+            <tr><td>A</td><td>3</td><td>3</td></tr>
+            <tr><td>B</td><td>4</td><td>2</td></tr>
+            <tr><td>C</td><td>5</td><td>1</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <p>{% blocktrans %}In period 1, the computer will randomly choose and remove one deck of cards,
+        and you will proceed to period 2.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 2, the computer will randomly choose and remove a second deck of cards,
+        and you will proceed to the period 3.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 3, 4 and 5, you will draw a random card from the remaining deck.
+        If you draw a <span style="color: green">green</span> card,
+        you will proceed to the next period and the same deck (with same number of cards) will be used again.
+        If you draw a <span style="color: red">red</span> card, the round will end.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}In period 6 (if you reach it), the round will end automatically.{% endblocktrans %}</p>
+
+    {% next_button %}
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1"
+            aria-valuemin="0" aria-valuemax="100" style="width:6%">
+            <span class="sr-only">1% Complete</span>
+        </div>
+    </div>
+
+    <style>
+        .otree-title {
+            display: none;
+        }
+    </style>
+
+{% endblock %}
+
+

@@ -1,0 +1,150 @@
+{% extends "trial_sum/Page.html" %}
+{% load otree i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    <head>
+        <link href="{% static 'nouislider.min.css' %}" rel="stylesheet">
+        <script src="{% static 'wNumb.min.js' %}"></script>
+        <script src="{% static 'nouislider.min.js' %}"></script>
+    </head>
+
+    <h3>
+    <br>
+    {% blocktrans %}Summary{% endblocktrans %}
+    </h3>
+
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">{{ form.non_field_errors }}</h6>
+        </div>
+    {% endif %}
+
+    <p>{% blocktrans %}This is the end of the trial round, because a red card was selected.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}Your reward in this round is the <b>sum</b> of your Reward (in Euro)
+        for all periods in which you made decisions. Thus:
+        <br>
+        <b>Reward in trial round={{ reward1 }}+{{ reward2 }}+{{ reward3 }}={{ total }} Euro</b>.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}This reward from the trial round will not be paid to you, as this is just a test.{% endblocktrans %}</p>
+
+    {% next_button %}
+
+    {% include 'trial_sum/includes/tabs.html' %}
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1"
+            aria-valuemin="0" aria-valuemax="100" style="width:22%">
+            <span class="sr-only">1% Complete</span>
+        </div>
+    </div>
+
+    <style>
+        .otree-title{
+            display: none;
+        }
+        .otree-form-errors {
+            visibility: hidden;
+            display: none;
+        }
+        /* The value of handle shows only when touching the handle. */
+        .noUi-tooltip {
+            display: none;
+        }
+        .noUi-active .noUi-tooltip {
+            display: block;
+        }
+        .noUi-handle {
+            display: none;
+        }
+        .noUi-pips {
+            top: 7px;
+        }
+        .noUi-pips-values {
+            display: block;
+        }
+        .noUi-value {
+            margin-top: -10px;
+        }
+        .noUi-marker-horizontal.noUi-marker-large {
+            height: 7px;
+        }
+        #info_table {
+          border-collapse: collapse;
+        }
+
+        #info_table th{
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            padding: 6px;
+            text-align: center;
+        }
+
+        #info_table td{
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            {#padding: 8px;#}
+            text-align: center;
+            height: 14px;
+        }
+
+        #info_table tr:nth-child(even){background-color: #f2f2f2;}
+
+        #info_table tr:hover {background-color: #ddd;}
+
+        #id_tooltip1, #id_tooltip2, #id_tooltip3, #id_tooltip4, #id_tooltip5, #id_tooltip6, #id_tooltip7, #id_tooltip8 {
+            border-style: solid;
+            border-color: black;
+            border-radius: 2px;
+            padding: 1px;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+
+{% endblock %}
+
+

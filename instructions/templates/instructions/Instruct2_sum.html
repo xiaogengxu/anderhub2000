@@ -1,0 +1,52 @@
+{% extends "instructions/Page.html" %}
+{% load otree i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h3>
+    <br>
+    {% blocktrans %}Decision{% endblocktrans %}
+    </h3>
+
+    <p>{% blocktrans %}You will start a round with 11.92 points in your <b>Account Balance</b>.
+        You will <b>not</b> be given more points in the same round.{% endblocktrans %}</p>
+
+    <p>{% blocktrans %}At the beginning of each period, you will decide how many points to spend.
+        Your <b>Spending</b> (in points) will be converted into <b>Euro Rewards</b> according to the graph below.{% endblocktrans %}</p>
+
+    <img id="graph" width="450" height="auto"/>
+    <br></br>
+
+    <p>{% blocktrans %}Your <b>Spending</b> in each period will be deducted from your <b>Account Balance</b>.
+        At the end of a round, any points left in your <b>Account</b> will be lost.{% endblocktrans %}</p>
+
+    {% next_button %}
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1"
+            aria-valuemin="0" aria-valuemax="100" style="width:8%">
+            <span class="sr-only">1% Complete</span>
+        </div>
+    </div>
+
+    <script>
+        lang_chosen = {{ lang|json }};
+        if (lang_chosen === 'en') {
+            document.getElementById('graph').src = "{% static 'reward.png' %}";
+        }
+        else if (lang_chosen === 'de') {
+            document.getElementById('graph').src = "{% static 'reward_de.png' %}";
+        }
+    </script>
+
+    <style>
+        .otree-title {
+            display: none;
+        }
+    </style>
+
+{% endblock %}
+
+

@@ -1,0 +1,340 @@
+{% extends "trial_prod/Page.html" %}
+{% load otree i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    <head>
+        <link href="{% static 'nouislider.min.css' %}" rel="stylesheet">
+        <script src="{% static 'wNumb.min.js' %}"></script>
+        <script src="{% static 'nouislider.min.js' %}"></script>
+    </head>
+
+    <h3>
+    <br>
+    {% blocktrans %}Trial round{% endblocktrans %}: {% blocktrans %}Period{% endblocktrans %} 2
+    </h3>
+
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">{{ form.non_field_errors }}</h6>
+        </div>
+    {% endif %}
+
+    <p>{% blocktrans %}One of the decks below will be removed at the end of this period.{% endblocktrans %}</p>
+
+    <table id="info_table" style="width: 46%">
+        <colgroup>
+           <col span="1" style="width: 10%;">
+           <col span="1" style="width: 18%;">
+           <col span="1" style="width: 18%;">
+        </colgroup>
+
+    <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+        <tbody>
+            <tr>
+                <th><b>{% blocktrans %}Deck{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: green">Green cards</span>{% endblocktrans %}</b></th>
+                <th><b>{% blocktrans %}<span style="color: red">Red cards</span>{% endblocktrans %}</b></th>
+            </tr>
+            <tr id="deckA"><td>A</td><td>3</td><td>3</td></tr>
+            <tr id="deckB"><td>B</td><td>4</td><td>2</td></tr>
+            <tr id="deckC"><td>C</td><td>5</td><td>1</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+    <p id="nonzero_balance">{% blocktrans %}Please tap and move on the slider below to indicate
+        how much you would like to spend in current Period.{% endblocktrans %}</p>
+
+    <p id="zero_balance">{% blocktrans %}You have already spent all your points. Your Account Balance is zero.
+        Your <b>Spending</b> this period is automatically set to zero.{% endblocktrans %}</p>
+
+    <input type="hidden" name="spend2" value="" id="myRange"/>
+    <input type="hidden" name="check_spend2" value="" id="id_check"/>
+    <div type="range" class="noUiSlider" id="slider"></div>
+
+    <div id="slider_space"><br><br></div>
+
+    <table id="info_table" style="width: 42%">
+        <colgroup>
+           <col span="1" style="width: 1%;">
+           <col span="1" style="width: 1%;">
+           <col span="1" style="width: 20%;">
+           <col span="1" style="width: 20%;">
+        </colgroup>
+
+    <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+        <tbody>
+            <tr>
+                <th></th>
+                <th>{% blocktrans %}Period{% endblocktrans %}</th>
+                <th>{% blocktrans %}Start Account Balance{% endblocktrans %}
+                    <a class="noclick" id="id_tooltip1" href="#" data-toggle="tooltip" data-placement="right"
+                            title="
+                            {% blocktrans %}Points available for spending in the period.
+                            It is equal to the balance of your previous period, minus your Spending in previous period.{% endblocktrans %}">
+                        ?
+                    </a>
+                </th>
+                <th>{% blocktrans %}Spending Decision (in points){% endblocktrans %}
+                    <a class="noclick" id="id_tooltip2" href="#" data-toggle="tooltip" data-placement="right"
+                            title="
+                            {% blocktrans %}Your Spending decision (in points){% endblocktrans %}">
+                        ?
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <td><span id="arrow1"></span></td>
+                <td>1</td>
+                <td><span id="balance1"></span></td>
+                <td><span id="spend1"></span></td>
+            </tr>
+            <tr>
+                <td><span id="arrow2"></span></td>
+                <td>2</td>
+                <td><span id="balance2"></span></td>
+                <td><span id="spend2"></span></td>
+            </tr>
+            <tr>
+                <td><span id="arrow3"></span></td>
+                <td>3</td>
+                <td><span id="balance3"></span></td>
+                <td><span id="spend3"></span></td>
+            </tr>
+            <tr>
+                <td><span id="arrow4"></span></td>
+                <td>4</td>
+                <td><span id="balance4"></span></td>
+                <td><span id="spend4"></span></td>
+            </tr>
+            <tr>
+                <td><span id="arrow5"></span></td>
+                <td>5</td>
+                <td><span id="balance5"></span></td>
+                <td><span id="spend5"></span></td>
+            </tr>
+            <tr>
+                <td><span id="arrow6"></span></td>
+                <td>6</td>
+                <td><span id="balance6"></span></td>
+                <td><span id="spend6"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: left"><b>{% blocktrans %}Reward in this round (Points){% endblocktrans %}</b></td>
+                <td><span id="total_point"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: left"><b>{% blocktrans %}Reward in this round (Euro){% endblocktrans %}</b></td>
+                <td><span id="total_reward"></span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    {% next_button %}
+
+    {% include 'trial_prod/includes/tabs.html' %}
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1"
+            aria-valuemin="0" aria-valuemax="100" style="width:14%">
+            <span class="sr-only">1% Complete</span>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function () {
+        var remove1 = {{ remove1|json }};
+        if (remove1 === 'A') {
+            document.getElementById('deckA').style.display = 'none';
+        }
+        else if (remove1 === 'B') {
+            document.getElementById('deckB').style.display = 'none';
+        }
+        else if (remove1 === 'C') {
+            document.getElementById('deckC').style.display = 'none';
+        }
+
+        document.getElementById('arrow2').innerHTML = '&#10146;';
+        document.getElementById('balance1').innerHTML = 11.92;
+        document.getElementById('spend1').innerHTML = {{ spend1|json }};
+        document.getElementById('balance2').innerHTML = {{ balance2|json }};
+
+        max_value = {{ balance2|json }};
+
+        var slider = document.getElementById('slider');
+        var spend = document.getElementById('myRange');
+        var check = document.getElementById('id_check');
+
+        if (max_value === 0) {
+            document.getElementById('nonzero_balance').style.display = 'none';
+            document.getElementById('slider').style.display = 'none';
+            document.getElementById('slider_space').style.display = 'none';
+            document.getElementById('spend2').innerHTML = 0;
+            document.getElementById('total_point').innerHTML = 0;
+            document.getElementById('total_reward').innerHTML = 0;
+
+            spend.value = 0;
+            check.value = 1;
+        }
+
+        else if (max_value > 0) {
+            document.getElementById('zero_balance').style.display = 'none';
+            // Initializing the sliders
+            noUiSlider.create(slider, {
+            start: 0,
+            step: 0.01,
+            tooltips: wNumb({decimals: 2}),
+            format: wNumb({decimals: 2}),
+            // Disable animation on value-setting,
+            // so the sliders respond immediately.
+            animate: false,
+            range: {
+                'min': 0,
+                'max': max_value
+            },
+            pips: {
+                mode: 'values',
+                values: [0, max_value],
+                density: 100,
+                format: wNumb({
+                    decimals: 2
+                })
+            }
+            });
+
+            // Update the input formfield values with the slider values
+            slider.noUiSlider.on('update', function (values, handle) {
+                spend.value = values[handle];
+            });
+
+            var handle_style = document.getElementById("slider").querySelector('.noUi-handle');
+            slider.noUiSlider.on('slide', function () {
+                handle_style.style.display = 'block';
+                handle_style.style.background = '#007bff';
+                check.value = 1;
+            });
+
+            /* Show and update the slider value only when the handle is touched */
+            slider.noUiSlider.on('slide', function () {
+                slider.noUiSlider.on('update', function (values, handle) {
+                    document.getElementById('spend2').innerHTML = values[handle];
+                    reward_num = (values[handle]*{{ spend1|json }})/4;
+                    document.getElementById('balance3').innerHTML = ({{ balance2|json }} - values[handle]).toFixed(2);
+                    document.getElementById('total_point').innerHTML = (reward_num*3).toFixed(2);
+                    document.getElementById('total_reward').innerHTML = reward_num.toFixed(2);
+                });
+            });
+        }
+    });
+    </script>
+
+    <style>
+        .otree-title{
+            display: none;
+        }
+        .otree-form-errors {
+            visibility: hidden;
+            display: none;
+        }
+        /* The value of handle shows only when touching the handle. */
+        .noUi-tooltip {
+            display: none;
+        }
+        .noUi-active .noUi-tooltip {
+            display: block;
+        }
+        .noUi-handle {
+            display: none;
+        }
+        .noUi-pips {
+            top: 7px;
+        }
+        .noUi-pips-values {
+            display: block;
+        }
+        .noUi-value {
+            margin-top: -10px;
+        }
+        .noUi-marker-horizontal.noUi-marker-large {
+            height: 7px;
+        }
+        #info_table {
+          border-collapse: collapse;
+        }
+
+        #info_table th{
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            padding: 6px;
+            text-align: center;
+        }
+
+        #info_table td{
+            border: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+            {#padding: 8px;#}
+            text-align: center;
+            height: 14px;
+        }
+
+        #info_table tr:nth-child(even){background-color: #f2f2f2;}
+
+        #info_table tr:hover {background-color: #ddd;}
+
+        #id_tooltip1, #id_tooltip2, #id_tooltip3, #id_tooltip4, #id_tooltip5, #id_tooltip6, #id_tooltip7, #id_tooltip8 {
+            border-style: solid;
+            border-color: black;
+            border-radius: 2px;
+            padding: 1px;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+
+{% endblock %}
+
+
