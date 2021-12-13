@@ -257,7 +257,7 @@
                     document.getElementById('spend4').innerHTML = (Math.round(100*values[handle])/100).toFixed(2);
                     reward_num = values[handle]*{{ spend3|json }}*{{ spend2|json }}*{{ spend1|json }}/5;
                     document.getElementById('balance5').innerHTML = ({{ balance4|json }} - values[handle]).toFixed(2);
-                    document.getElementById('total_point').innerHTML = (reward_num*3).toFixed(2);
+                    document.getElementById('total_point').innerHTML = (reward_num*5).toFixed(2);
                     document.getElementById('total_reward').innerHTML = reward_num.toFixed(2);
                 });
             });

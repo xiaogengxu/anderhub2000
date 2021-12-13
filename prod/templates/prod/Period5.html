@@ -259,7 +259,7 @@
                     document.getElementById('spend5').innerHTML = (Math.round(100*values[handle])/100).toFixed(2);
                     reward_num = values[handle]*{{ spend4|json }}*{{ spend3|json }}*{{ spend2|json }}*{{ spend1|json }}/5;
                     document.getElementById('balance6').innerHTML = ({{ balance5|json }} - values[handle]).toFixed(2);
-                    document.getElementById('total_point').innerHTML = (reward_num*3).toFixed(2);
+                    document.getElementById('total_point').innerHTML = (reward_num*5).toFixed(2);
                     document.getElementById('total_reward').innerHTML = reward_num.toFixed(2);
                 });
             });
