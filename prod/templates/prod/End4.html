@@ -23,12 +23,12 @@
         </div>
     {% endif %}
 
-    <p>{% blocktrans %}This is the end of the round {{ round_num }}, because a red card was selected.{% endblocktrans %}</p>
+    <p>{% blocktrans %}This is the end of the round {{ round_num }}, because a <span style="color: red">red</span> card was selected.{% endblocktrans %}</p>
 
     <p>{% blocktrans %}Your reward in this round is the <b>product</b> of your Spending (in points)
         for all periods in which you made decisions, divided by the exchange rate. Thus:
         <br>
-        <b>Reward in round {{ round_num }}=({{ spend1 }}&times;{{ spend2 }}&times;{{ spend3 }})/4={{ total }} Euro</b>.{% endblocktrans %}</p>
+        <b>Reward in round {{ round_num }}=(<span id="spend1"></span>&times;<span id="spend2"></span>&times;<span id="spend3"></span>)/5={{ total }} Euro</b>.{% endblocktrans %}</p>
 
     {% next_button %}
 
@@ -40,6 +40,12 @@
             <span class="sr-only">1% Complete</span>
         </div>
     </div>
+
+    <script>
+        document.getElementById('spend1').innerHTML = ((100*{{ spend1|json }})/100).toFixed(2);
+        document.getElementById('spend2').innerHTML = ((100*{{ spend2|json }})/100).toFixed(2);
+        document.getElementById('spend3').innerHTML = ((100*{{ spend3|json }})/100).toFixed(2);
+    </script>
 
     <style>
         .otree-title{

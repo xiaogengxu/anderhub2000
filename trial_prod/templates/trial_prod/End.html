@@ -28,7 +28,7 @@
     <p>{% blocktrans %}Your reward in this round is the <b>product</b> of your Spending (in points)
         for all periods in which you made decisions, divided by the exchange rate. Thus:
         <br>
-        <b>Reward in trial round=({{ spend1 }}&times;{{ spend2 }}&times;{{ spend3 }}&times;{{ spend4 }}&times;{{ spend5 }}&times;{{ spend6 }})/4={{ total }} Euro</b>.{% endblocktrans %}</p>
+        <b>Reward in trial round=(<span id="spend1"></span>&times;<span id="spend2"></span>&times;<span id="spend3"></span>&times;<span id="spend4"></span>&times;<span id="spend5"></span>&times;<span id="spend6"></span>)/5={{ total }} Euro</b>.{% endblocktrans %}</p>
 
     <p>{% blocktrans %}This reward from the trial round will not be paid to you, as this is just a test.{% endblocktrans %}</p>
 
@@ -43,6 +43,15 @@
         </div>
     </div>
     
+    <script>
+        document.getElementById('spend1').innerHTML = ((100*{{ spend1|json }})/100).toFixed(2);
+        document.getElementById('spend2').innerHTML = ((100*{{ spend2|json }})/100).toFixed(2);
+        document.getElementById('spend3').innerHTML = ((100*{{ spend3|json }})/100).toFixed(2);
+        document.getElementById('spend4').innerHTML = ((100*{{ spend4|json }})/100).toFixed(2);
+        document.getElementById('spend5').innerHTML = ((100*{{ spend5|json }})/100).toFixed(2);
+        document.getElementById('spend6').innerHTML = ((100*{{ spend6|json }})/100).toFixed(2);
+    </script>
+
     <style>
         .otree-title{
             display: none;

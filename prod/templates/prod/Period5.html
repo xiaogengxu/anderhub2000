@@ -189,13 +189,13 @@
 
         document.getElementById('arrow5').innerHTML = '&#10146;';
         document.getElementById('balance1').innerHTML = 11.92;
-        document.getElementById('spend1').innerHTML = {{ spend1|json }};
+        document.getElementById('spend1').innerHTML = ((100*{{ spend1|json }})/100).toFixed(2);
         document.getElementById('balance2').innerHTML = {{ balance2|json }};
-        document.getElementById('spend2').innerHTML = {{ spend2|json }};
+        document.getElementById('spend2').innerHTML = ((100*{{ spend2|json }})/100).toFixed(2);
         document.getElementById('balance3').innerHTML = {{ balance3|json }};
-        document.getElementById('spend3').innerHTML = {{ spend3|json }};
+        document.getElementById('spend3').innerHTML = ((100*{{ spend3|json }})/100).toFixed(2);
         document.getElementById('balance4').innerHTML = {{ balance4|json }};
-        document.getElementById('spend4').innerHTML = {{ spend4|json }};
+        document.getElementById('spend4').innerHTML = ((100*{{ spend4|json }})/100).toFixed(2);
         document.getElementById('balance5').innerHTML = {{ balance5|json }};
 
         max_value = {{ balance5|json }};
@@ -256,8 +256,8 @@
             /* Show and update the slider value only when the handle is touched */
             slider.noUiSlider.on('slide', function () {
                 slider.noUiSlider.on('update', function (values, handle) {
-                    document.getElementById('spend5').innerHTML = values[handle];
-                    reward_num = values[handle]*{{ spend4|json }}*{{ spend3|json }}*{{ spend2|json }}*{{ spend1|json }}/4;
+                    document.getElementById('spend5').innerHTML = (Math.round(100*values[handle])/100).toFixed(2);
+                    reward_num = values[handle]*{{ spend4|json }}*{{ spend3|json }}*{{ spend2|json }}*{{ spend1|json }}/5;
                     document.getElementById('balance6').innerHTML = ({{ balance5|json }} - values[handle]).toFixed(2);
                     document.getElementById('total_point').innerHTML = (reward_num*3).toFixed(2);
                     document.getElementById('total_reward').innerHTML = reward_num.toFixed(2);

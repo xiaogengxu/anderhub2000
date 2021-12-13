@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:24+0200\n"
-"PO-Revision-Date: 2021-12-02 21:49+0200\n"
+"POT-Creation-Date: 2021-12-13 15:57+0200\n"
+"PO-Revision-Date: 2021-12-13 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,23 +19,23 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: .\prod\pages.py:35 .\prod\pages.py:67 .\prod\pages.py:105
-#: .\prod\pages.py:219 .\prod\pages.py:341 .\prod\pages.py:471
+#: .\prod\pages.py:181 .\prod\pages.py:265 .\prod\pages.py:357
 msgid "Please decide how much you would like to spend."
 msgstr "Bitte entscheiden Sie, wie viel Sie ausgeben möchten."
 
-#: .\prod\templates\prod\End.html:18 .\prod\templates\prod\End4.html:18
-#: .\prod\templates\prod\End5.html:18 .\prod\templates\prod\End6.html:18
+#: .\prod\templates\prod\End.html:17 .\prod\templates\prod\End4.html:17
+#: .\prod\templates\prod\End5.html:17 .\prod\templates\prod\End6.html:17
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: .\prod\templates\prod\End.html:27
+#: .\prod\templates\prod\End.html:26
 #, python-format
 msgid ""
 "This is the end of the round %(round_num)s, because you reached the end of "
 "period 6."
 msgstr "Die Runde %(round_num)s geht zu Ende, da Sie Periode 6 erreicht haben."
 
-#: .\prod\templates\prod\End.html:29
+#: .\prod\templates\prod\End.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -43,26 +43,28 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
+"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
 "Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
+"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
 "Euro</b>."
 
-#: .\prod\templates\prod\End4.html:27 .\prod\templates\prod\End5.html:27
-#: .\prod\templates\prod\End6.html:27
+#: .\prod\templates\prod\End4.html:26 .\prod\templates\prod\End5.html:26
+#: .\prod\templates\prod\End6.html:26
 #, python-format
 msgid ""
-"This is the end of the round %(round_num)s, because a red card was selected."
+"This is the end of the round %(round_num)s, because a <span style=\"color: "
+"red\">red</span> card was selected."
 msgstr ""
-"Die Runde %(round_num)s geht zu Ende, da eine rote Karte gezogen wurde."
+"Die Runde %(round_num)s geht zu Ende, da eine <span style=\"color: red"
+"\">rote</span> Karte gezogen wurde."
 
-#: .\prod\templates\prod\End4.html:29
+#: .\prod\templates\prod\End4.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -70,16 +72,16 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s)/4=%(total)s Euro</b>."
+"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s)/4=%(total)s Euro</b>."
 
-#: .\prod\templates\prod\End5.html:29
+#: .\prod\templates\prod\End5.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -87,16 +89,16 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
+"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
 
-#: .\prod\templates\prod\End6.html:29
+#: .\prod\templates\prod\End6.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -104,14 +106,14 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
+"        <b>Reward in round %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=(%(spend1)s&times;%(spend2)s&times;%"
+"(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
 
 #: .\prod\templates\prod\Period1.html:17 .\prod\templates\prod\Period2.html:17
 #: .\prod\templates\prod\Period3.html:17 .\prod\templates\prod\Period4.html:17

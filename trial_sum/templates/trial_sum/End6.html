@@ -23,12 +23,12 @@
         </div>
     {% endif %}
 
-    <p>{% blocktrans %}This is the end of the trial round, because a red card was selected.{% endblocktrans %}</p>
+    <p>{% blocktrans %}This is the end of the trial round, because a <span style="color: red">red</span> card was selected.{% endblocktrans %}</p>
 
     <p>{% blocktrans %}Your reward in this round is the <b>sum</b> of your Reward (in Euro)
         for all periods in which you made decisions. Thus:
         <br>
-        <b>Reward in trial round={{ reward1 }}+{{ reward2 }}+{{ reward3 }}+{{ reward4 }}+{{ reward5 }}={{ total }} Euro</b>.{% endblocktrans %}</p>
+        <b>Reward in trial round=<span id="reward1"></span>+<span id="reward2"></span>+<span id="reward3"></span>+<span id="reward4"></span>+<span id="reward5"></span>={{ total }} Euro</b>.{% endblocktrans %}</p>
 
     <p>{% blocktrans %}This reward from the trial round will not be paid to you, as this is just a test.{% endblocktrans %}</p>
 
@@ -43,6 +43,14 @@
         </div>
     </div>
     
+    <script>
+        document.getElementById('reward1').innerHTML = ((100*{{ reward1|json }})/100).toFixed(2);
+        document.getElementById('reward2').innerHTML = ((100*{{ reward2|json }})/100).toFixed(2);
+        document.getElementById('reward3').innerHTML = ((100*{{ reward3|json }})/100).toFixed(2);
+        document.getElementById('reward4').innerHTML = ((100*{{ reward4|json }})/100).toFixed(2);
+        document.getElementById('reward5').innerHTML = ((100*{{ reward5|json }})/100).toFixed(2);
+    </script>
+
     <style>
         .otree-title{
             display: none;

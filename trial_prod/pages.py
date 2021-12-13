@@ -30,7 +30,7 @@ class Period1(Page):
     def before_next_page(self):
         self.participant.vars['balance_trial2'] = round(11.92 - self.player.spend1, 2)
         self.participant.vars['spend_trial1'] = self.player.spend1
-        self.player.total_reward = round(self.player.spend1/4, 2)
+        self.player.total_reward = round(self.player.spend1/5, 2)
 
 
 class Period2(Page):
@@ -59,7 +59,7 @@ class Period2(Page):
     def before_next_page(self):
         self.participant.vars['balance_trial3'] = round(self.participant.vars['balance_trial2'] - self.player.spend2, 2)
         self.participant.vars['spend_trial2'] = self.player.spend2
-        self.player.total_reward = round(self.player.spend2*self.player.spend1/4, 2)
+        self.player.total_reward = round(self.player.spend2*self.player.spend1/5, 2)
 
 
 class Period3(Page):
@@ -94,7 +94,7 @@ class Period3(Page):
     def before_next_page(self):
         self.participant.vars['balance_trial4'] = round(self.participant.vars['balance_trial3'] - self.player.spend3, 2)
         self.participant.vars['spend_trial3'] = self.player.spend3
-        self.player.total_reward = round(self.player.spend3*self.player.spend2*self.player.spend1/4, 2)
+        self.player.total_reward = round(self.player.spend3*self.player.spend2*self.player.spend1/5, 2)
 
 
 class End4(Page):
@@ -109,7 +109,7 @@ class End4(Page):
         spend1 = self.participant.vars['spend_trial1']
         spend2 = self.participant.vars['spend_trial2']
         spend3 = self.participant.vars['spend_trial3']
-        total = round(spend1*spend2*spend3/4, 2)
+        total = round(spend1*spend2*spend3/5, 2)
         return {
             'lang': lang,
             'spend1': spend1,
@@ -158,7 +158,7 @@ class Period4(Page):
     def before_next_page(self):
         self.participant.vars['balance_trial5'] = round(self.participant.vars['balance_trial4'] - self.player.spend4, 2)
         self.participant.vars['spend_trial4'] = self.player.spend4
-        self.player.total_reward = round(self.player.spend4*self.player.spend3*self.player.spend2*self.player.spend1/4, 2)
+        self.player.total_reward = round(self.player.spend4*self.player.spend3*self.player.spend2*self.player.spend1/5, 2)
 
 
 class End5(Page):
@@ -174,7 +174,7 @@ class End5(Page):
         spend2 = self.participant.vars['spend_trial2']
         spend3 = self.participant.vars['spend_trial3']
         spend4 = self.participant.vars['spend_trial4']
-        total = round(spend1*spend2*spend3*spend4/4, 2)
+        total = round(spend1*spend2*spend3*spend4/5, 2)
         return {
             'lang': lang,
             'spend1': spend1,
@@ -228,7 +228,7 @@ class Period5(Page):
     def before_next_page(self):
         self.participant.vars['balance_trial6'] = round(self.participant.vars['balance_trial5'] - self.player.spend5, 2)
         self.participant.vars['spend_trial5'] = self.player.spend5
-        self.player.total_reward = round(self.player.spend5*self.player.spend4*self.player.spend3*self.player.spend2*self.player.spend1/4, 2)
+        self.player.total_reward = round(self.player.spend5*self.player.spend4*self.player.spend3*self.player.spend2*self.player.spend1/5, 2)
 
 
 class End6(Page):
@@ -246,7 +246,7 @@ class End6(Page):
         spend3 = self.participant.vars['spend_trial3']
         spend4 = self.participant.vars['spend_trial4']
         spend5 = self.participant.vars['spend_trial5']
-        total = round(spend1*spend2*spend3*spend4*spend5/4, 2)
+        total = round(spend1*spend2*spend3*spend4*spend5/5, 2)
         return {
             'lang': lang,
             'spend1': spend1,
@@ -306,7 +306,7 @@ class Period6(Page):
     def before_next_page(self):
         self.participant.vars['spend_trial6'] = self.player.spend6
         self.player.total_reward = round(self.player.spend6*self.player.spend5*self.player.spend4*self.player.spend3*
-                                         self.player.spend2*self.player.spend1/4, 2)
+                                         self.player.spend2*self.player.spend1/5, 2)
 
 
 class End(Page):
@@ -325,7 +325,7 @@ class End(Page):
         spend4 = self.participant.vars['spend_trial4']
         spend5 = self.participant.vars['spend_trial5']
         spend6 = self.participant.vars['spend_trial6']
-        total = round(spend1*spend2*spend3*spend4*spend5*spend6/4, 2)
+        total = round(spend1*spend2*spend3*spend4*spend5*spend6/5, 2)
         return {
             'lang': lang,
             'spend1': spend1,

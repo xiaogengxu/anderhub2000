@@ -173,8 +173,8 @@
 
         document.getElementById('arrow2').innerHTML = '&#10146;';
         document.getElementById('balance1').innerHTML = 11.92;
-        document.getElementById('spend1').innerHTML = {{ spend1|json }};
-        document.getElementById('reward1').innerHTML = {{ reward1|json }};
+        document.getElementById('spend1').innerHTML = ((100*{{ spend1|json }})/100).toFixed(2);
+        document.getElementById('reward1').innerHTML = ((100*{{ reward1|json }})/100).toFixed(2);
         document.getElementById('balance2').innerHTML = {{ balance2|json }};
 
         max_value = {{ balance2|json }};
@@ -237,8 +237,8 @@
             /* Show and update the slider value only when the handle is touched */
             slider.noUiSlider.on('slide', function () {
                 slider.noUiSlider.on('update', function (values, handle) {
-                    document.getElementById('spend2').innerHTML = values[handle];
-                    reward_num = Math.sqrt(values[handle]);
+                    document.getElementById('spend2').innerHTML = (Math.round(100*values[handle])/100).toFixed(2);
+                    reward_num = Math.sqrt(values[handle])/1.4142;
                     document.getElementById('reward2').innerHTML = reward_num.toFixed(2);
                     document.getElementById('balance3').innerHTML = ({{ balance2|json }} - values[handle]).toFixed(2);
                     document.getElementById('total_reward').innerHTML = (reward_num + {{ reward1|json }}).toFixed(2);

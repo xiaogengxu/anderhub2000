@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:24+0200\n"
-"PO-Revision-Date: 2021-12-02 21:27+0200\n"
+"POT-Creation-Date: 2021-12-13 15:57+0200\n"
+"PO-Revision-Date: 2021-12-13 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,19 +24,19 @@ msgstr ""
 msgid "Please decide how much you would like to spend."
 msgstr "Bitte entscheiden Sie, wie viel Sie ausgeben möchten."
 
-#: .\trial_prod\templates\trial_prod\End.html:18
-#: .\trial_prod\templates\trial_prod\End4.html:18
-#: .\trial_prod\templates\trial_prod\End5.html:18
-#: .\trial_prod\templates\trial_prod\End6.html:18
+#: .\trial_prod\templates\trial_prod\End.html:17
+#: .\trial_prod\templates\trial_prod\End4.html:17
+#: .\trial_prod\templates\trial_prod\End5.html:17
+#: .\trial_prod\templates\trial_prod\End6.html:17
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: .\trial_prod\templates\trial_prod\End.html:27
+#: .\trial_prod\templates\trial_prod\End.html:26
 msgid ""
 "This is the end of the trial round, because you reached the end of period 6."
 msgstr "Die Testrunde geht zu Ende, da Sie Periode 6 erreicht haben."
 
-#: .\trial_prod\templates\trial_prod\End.html:29
+#: .\trial_prod\templates\trial_prod\End.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -44,33 +44,35 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
-"Euro</b>."
+"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s "
-"Euro</b>."
+"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s&times;%(spend5)s&times;%(spend6)s)/4=%(total)s Euro</b>."
 
-#: .\trial_prod\templates\trial_prod\End.html:34
-#: .\trial_prod\templates\trial_prod\End4.html:34
-#: .\trial_prod\templates\trial_prod\End5.html:34
-#: .\trial_prod\templates\trial_prod\End6.html:34
+#: .\trial_prod\templates\trial_prod\End.html:33
+#: .\trial_prod\templates\trial_prod\End4.html:33
+#: .\trial_prod\templates\trial_prod\End5.html:33
+#: .\trial_prod\templates\trial_prod\End6.html:33
 msgid ""
 "This reward from the trial round will not be paid to you, as this is just a "
 "test."
 msgstr "Diese Belohnung wird nicht ausbezahlt, da dies nur ein Test war."
 
-#: .\trial_prod\templates\trial_prod\End4.html:27
-#: .\trial_prod\templates\trial_prod\End5.html:27
-#: .\trial_prod\templates\trial_prod\End6.html:27
-msgid "This is the end of the trial round, because a red card was selected."
-msgstr "Die Testrunde geht zu Ende, da eine rote Karte gezogen wurde."
+#: .\trial_prod\templates\trial_prod\End4.html:26
+#: .\trial_prod\templates\trial_prod\End5.html:26
+#: .\trial_prod\templates\trial_prod\End6.html:26
+msgid ""
+"This is the end of the trial round, because a <span style=\"color: red"
+"\">red</span> card was selected."
+msgstr ""
+"Die Testrunde geht zu Ende, da eine <span style=\"color: red\">rote</span> "
+"Karte gezogen wurde."
 
-#: .\trial_prod\templates\trial_prod\End4.html:29
+#: .\trial_prod\templates\trial_prod\End4.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -78,16 +80,16 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s)/4=%(total)s Euro</b>."
+"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s)/4=%(total)s Euro</b>."
 
-#: .\trial_prod\templates\trial_prod\End5.html:29
+#: .\trial_prod\templates\trial_prod\End5.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -95,16 +97,16 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
+"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s)/4=%(total)s Euro</b>."
 
-#: .\trial_prod\templates\trial_prod\End6.html:29
+#: .\trial_prod\templates\trial_prod\End6.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>product</b> of your Spending (in "
@@ -112,14 +114,14 @@ msgid ""
 "        for all periods in which you made decisions, divided by the exchange "
 "rate. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
+"        <b>Reward in trial round=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>multipliziert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;"
-"%(spend3)s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=(%(spend1)s&times;%(spend2)s&times;%(spend3)"
+"s&times;%(spend4)s&times;%(spend5)s)/4=%(total)s Euro</b>."
 
 #: .\trial_prod\templates\trial_prod\Period1.html:17
 #: .\trial_prod\templates\trial_prod\Period2.html:17

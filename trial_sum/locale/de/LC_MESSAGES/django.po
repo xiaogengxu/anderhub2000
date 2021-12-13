@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:24+0200\n"
-"PO-Revision-Date: 2021-12-02 21:58+0200\n"
+"POT-Creation-Date: 2021-12-13 15:57+0200\n"
+"PO-Revision-Date: 2021-12-13 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,92 +23,96 @@ msgstr ""
 msgid "Please decide how much you would like to spend."
 msgstr "Bitte entscheiden Sie, wie viel Sie ausgeben möchten."
 
-#: .\trial_sum\templates\trial_sum\End.html:18
-#: .\trial_sum\templates\trial_sum\End4.html:18
-#: .\trial_sum\templates\trial_sum\End5.html:18
-#: .\trial_sum\templates\trial_sum\End6.html:18
+#: .\trial_sum\templates\trial_sum\End.html:17
+#: .\trial_sum\templates\trial_sum\End4.html:17
+#: .\trial_sum\templates\trial_sum\End5.html:17
+#: .\trial_sum\templates\trial_sum\End6.html:17
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: .\trial_sum\templates\trial_sum\End.html:27
+#: .\trial_sum\templates\trial_sum\End.html:26
 msgid ""
 "This is the end of the trial round, because you reached the end of period 6."
 msgstr "Die Testrunde geht zu Ende, da Sie Periode 6 erreicht haben."
 
-#: .\trial_sum\templates\trial_sum\End.html:29
+#: .\trial_sum\templates\trial_sum\End.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
 "        for all periods in which you made decisions. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
+"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
 
-#: .\trial_sum\templates\trial_sum\End.html:34
-#: .\trial_sum\templates\trial_sum\End4.html:34
-#: .\trial_sum\templates\trial_sum\End5.html:34
-#: .\trial_sum\templates\trial_sum\End6.html:34
+#: .\trial_sum\templates\trial_sum\End.html:33
+#: .\trial_sum\templates\trial_sum\End4.html:33
+#: .\trial_sum\templates\trial_sum\End5.html:33
+#: .\trial_sum\templates\trial_sum\End6.html:33
 msgid ""
 "This reward from the trial round will not be paid to you, as this is just a "
 "test."
 msgstr "Diese Belohnung wird nicht ausbezahlt, da dies nur ein Test war."
 
-#: .\trial_sum\templates\trial_sum\End4.html:27
-#: .\trial_sum\templates\trial_sum\End5.html:27
-#: .\trial_sum\templates\trial_sum\End6.html:27
-msgid "This is the end of the trial round, because a red card was selected."
-msgstr "Die Testrunde geht zu Ende, da eine rote Karte gezogen wurde."
+#: .\trial_sum\templates\trial_sum\End4.html:26
+#: .\trial_sum\templates\trial_sum\End5.html:26
+#: .\trial_sum\templates\trial_sum\End6.html:26
+msgid ""
+"This is the end of the trial round, because a <span style=\"color: red"
+"\">red</span> card was selected."
+msgstr ""
+"Die Testrunde geht zu Ende, da eine <span style=\"color: red\">rote</span> "
+"Karte gezogen wurde."
 
-#: .\trial_sum\templates\trial_sum\End4.html:29
+#: .\trial_sum\templates\trial_sum\End4.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
 "        for all periods in which you made decisions. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s="
-"%(total)s Euro</b>."
+"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s=%(total)"
+"s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s="
-"%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s=%(total)"
+"s Euro</b>."
 
-#: .\trial_sum\templates\trial_sum\End5.html:29
+#: .\trial_sum\templates\trial_sum\End5.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
 "        for all periods in which you made decisions. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s=%(total)s Euro</b>."
+"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s=%(total)s Euro</b>."
 
-#: .\trial_sum\templates\trial_sum\End6.html:29
+#: .\trial_sum\templates\trial_sum\End6.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
 "        for all periods in which you made decisions. Thus:\n"
 "        <br>\n"
-"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s=%(total)s Euro</b>."
+"        <b>Reward in trial round=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s=%(total)s Euro</b>."
 msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s=%(total)s Euro</b>."
+"<b>Belohnung in dieser Testrunde=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s=%(total)s Euro</b>."
 
 #: .\trial_sum\templates\trial_sum\Period1.html:17
 #: .\trial_sum\templates\trial_sum\Period2.html:17

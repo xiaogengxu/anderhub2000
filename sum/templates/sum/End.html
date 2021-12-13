@@ -28,7 +28,7 @@
     <p>{% blocktrans %}Your reward in this round is the <b>sum</b> of your Reward (in Euro)
         for all periods in which you made decisions. Thus:
         <br>
-        <b>Reward in round {{ round_num }}={{ reward1 }}+{{ reward2 }}+{{ reward3 }}+{{ reward4 }}+{{ reward5 }}+{{ reward6 }}={{ total }} Euro</b>.{% endblocktrans %}</p>
+        <b>Reward in round {{ round_num }}=<span id="reward1"></span>+<span id="reward2"></span>+<span id="reward3"></span>+<span id="reward4"></span>+<span id="reward5"></span>+<span id="reward6"></span>={{ total }} Euro</b>.{% endblocktrans %}</p>
 
     {% next_button %}
 
@@ -41,6 +41,15 @@
         </div>
     </div>
     
+    <script>
+        document.getElementById('reward1').innerHTML = ((100*{{ reward1|json }})/100).toFixed(2);
+        document.getElementById('reward2').innerHTML = ((100*{{ reward2|json }})/100).toFixed(2);
+        document.getElementById('reward3').innerHTML = ((100*{{ reward3|json }})/100).toFixed(2);
+        document.getElementById('reward4').innerHTML = ((100*{{ reward4|json }})/100).toFixed(2);
+        document.getElementById('reward5').innerHTML = ((100*{{ reward5|json }})/100).toFixed(2);
+        document.getElementById('reward6').innerHTML = ((100*{{ reward6|json }})/100).toFixed(2);
+    </script>
+
     <style>
         .otree-title{
             display: none;

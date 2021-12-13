@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 21:24+0200\n"
-"PO-Revision-Date: 2021-12-02 21:59+0200\n"
+"POT-Creation-Date: 2021-12-13 15:57+0200\n"
+"PO-Revision-Date: 2021-12-13 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: .\sum\pages.py:35 .\sum\pages.py:67 .\sum\pages.py:107 .\sum\pages.py:226
-#: .\sum\pages.py:355 .\sum\pages.py:497
+#: .\sum\pages.py:35 .\sum\pages.py:67 .\sum\pages.py:107 .\sum\pages.py:188
+#: .\sum\pages.py:279 .\sum\pages.py:383
 msgid "Please decide how much you would like to spend."
 msgstr "Bitte entscheiden Sie, wie viel Sie ausgeben möchten."
 
-#: .\sum\templates\sum\End.html:18 .\sum\templates\sum\End4.html:18
-#: .\sum\templates\sum\End5.html:18 .\sum\templates\sum\End6.html:18
+#: .\sum\templates\sum\End.html:17 .\sum\templates\sum\End4.html:17
+#: .\sum\templates\sum\End5.html:17 .\sum\templates\sum\End6.html:17
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: .\sum\templates\sum\End.html:27
+#: .\sum\templates\sum\End.html:26
 #, python-format
 msgid ""
 "This is the end of the round %(round_num)s, because you reached the end of "
 "period 6."
 msgstr "Die Runde %(round_num)s geht zu Ende, da Sie Periode 6 erreicht haben."
 
-#: .\sum\templates\sum\End.html:29
+#: .\sum\templates\sum\End.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
@@ -47,18 +47,20 @@ msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s+%(reward6)s=%(total)s Euro</b>."
 
-#: .\sum\templates\sum\End4.html:27 .\sum\templates\sum\End5.html:27
-#: .\sum\templates\sum\End6.html:27
+#: .\sum\templates\sum\End4.html:26 .\sum\templates\sum\End5.html:26
+#: .\sum\templates\sum\End6.html:26
 #, python-format
 msgid ""
-"This is the end of the round %(round_num)s, because a red card was selected."
+"This is the end of the round %(round_num)s, because a <span style=\"color: "
+"red\">red</span> card was selected."
 msgstr ""
-"Die Runde %(round_num)s geht zu Ende, da eine rote Karte gezogen wurde."
+"Die Runde %(round_num)s geht zu Ende, da eine <span style=\"color: red"
+"\">rote</span> Karte gezogen wurde."
 
-#: .\sum\templates\sum\End4.html:29
+#: .\sum\templates\sum\End4.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
@@ -70,10 +72,10 @@ msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s="
-"%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s=%"
+"(total)s Euro</b>."
 
-#: .\sum\templates\sum\End5.html:29
+#: .\sum\templates\sum\End5.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
@@ -85,10 +87,10 @@ msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s=%(total)s Euro</b>."
 
-#: .\sum\templates\sum\End6.html:29
+#: .\sum\templates\sum\End6.html:28
 #, python-format
 msgid ""
 "Your reward in this round is the <b>sum</b> of your Reward (in Euro)\n"
@@ -100,8 +102,8 @@ msgstr ""
 "Für Ihre Belohnung werden die Belohnungen der einzelnen Perioden "
 "<b>aufaddiert</b>. Somit:\n"
 "<br>\n"
-"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+"
-"%(reward4)s+%(reward5)s=%(total)s Euro</b>."
+"<b>Belohnung in Runde %(round_num)s=%(reward1)s+%(reward2)s+%(reward3)s+%"
+"(reward4)s+%(reward5)s=%(total)s Euro</b>."
 
 #: .\sum\templates\sum\Period1.html:17 .\sum\templates\sum\Period2.html:17
 #: .\sum\templates\sum\Period3.html:17 .\sum\templates\sum\Period4.html:17
