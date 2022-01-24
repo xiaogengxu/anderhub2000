@@ -29,7 +29,9 @@ class Quiz(Page):
         return choices
 
     def quiz2_choices(player):
-        choices = [['1', _('1 period')], ['3', _('3 periods')], ['6', _('6 periods')]]
+        choices = [['advance', _('The card color decides whether you advance to the next period.')],
+                   ['spending', _('The card color decides your Spending in the next round.')],
+                   ['reward', _('The card color determines your Reward.')]]
         random.shuffle(choices)
         return choices
 
@@ -39,16 +41,18 @@ class Quiz(Page):
         return choices
 
     def quiz4_choices(player):
-        choices = [['points_left', _('The amount left on the Account Balance at the start of the period')],
-                   ['10.92', _('10.92 points')],
-                   ['same_points', _('The same amount spent in the previous period or more')]]
+        choices = [['points_left', _('The amount on the Account Balance at the start of the period')],
+                   ['44', _('44 points')],
+                   ['same_points', _('The same amount spent in the previous period')]]
         random.shuffle(choices)
         return choices
 
     def quiz5_choices(player):
         choices = [['lost', _('I lose these points.')],
-                   ['spend', _('I can spend these points in the next round.')],
-                   ['converted', _('These points are automatically converted into Euro Rewards.')]]
+                   ['spend', _('If more than 5 points are left in the Account Balance, '
+                               'I will be allowed to play one extra round to decide what to do.')],
+                   ['converted', _('The points left in the Account Balance are automatically converted '
+                                   'into extra Euro Rewards.')]]
         random.shuffle(choices)
         return choices
 
@@ -79,7 +83,7 @@ class Quiz(Page):
             if self.player.quiz1 != 'spending':
                 self.participant.vars['mis_q1'] = 1
                 self.player.quiz1 = ''
-            if self.player.quiz2 != '3':
+            if self.player.quiz2 != 'advance':
                 self.participant.vars['mis_q2'] = 1
                 self.player.quiz2 = ''
             if self.player.quiz3 != '6':
@@ -142,7 +146,9 @@ class Quiz_retry(Page):
         return choices
 
     def quiz2_choices(player):
-        choices = [['1', _('1 period')], ['3', _('3 periods')], ['6', _('6 periods')]]
+        choices = [['advance', _('The card color decides whether you advance to the next period.')],
+                   ['spending', _('The card color decides your Spending in the next round.')],
+                   ['reward', _('The card color determines your Reward.')]]
         random.shuffle(choices)
         return choices
 
@@ -152,16 +158,18 @@ class Quiz_retry(Page):
         return choices
 
     def quiz4_choices(player):
-        choices = [['points_left', _('The amount left on the Account Balance at the start of the period')],
-                   ['10.92', _('10.92 points')],
-                   ['same_points', _('The same amount spent in the previous period or more')]]
+        choices = [['points_left', _('The amount on the Account Balance at the start of the period')],
+                   ['44', _('44 points')],
+                   ['same_points', _('The same amount spent in the previous period')]]
         random.shuffle(choices)
         return choices
 
     def quiz5_choices(player):
         choices = [['lost', _('I lose these points.')],
-                   ['spend', _('I can spend these points in the next round.')],
-                   ['converted', _('These points are automatically converted into Euro Rewards.')]]
+                   ['spend', _('If more than 5 points are left in the Account Balance, '
+                               'I will be allowed to play one extra round to decide what to do.')],
+                   ['converted', _('The points left in the Account Balance are automatically converted '
+                                   'into extra Euro Rewards.')]]
         random.shuffle(choices)
         return choices
 
@@ -238,7 +246,7 @@ class Quiz_retry(Page):
                 self.participant.vars['mis_q1'] = 0
 
         if self.participant.vars['mis_q2'] == 1:
-            if self.player.quiz2 == '3':
+            if self.player.quiz2 == 'advance':
                 self.participant.vars['mis_q2'] = 0
 
         if self.participant.vars['mis_q3'] == 1:

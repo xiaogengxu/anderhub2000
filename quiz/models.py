@@ -47,7 +47,7 @@ class Player(BasePlayer):
     )
 
     quiz2 = models.StringField(
-        label=_('2.	What is the minimum length of a round?'),
+        label=_('2.	What is decided by the card color drawn from deck?'),
         widget=widgets.RadioSelect
     )
 
@@ -57,12 +57,13 @@ class Player(BasePlayer):
     )
 
     quiz4 = models.StringField(
-        label=_('4.	How many points can you spend in each period?'),
+        label=_('4.	What is your maximum Spending (in points) in each period?'),
         widget=widgets.RadioSelect
     )
 
     quiz5 = models.StringField(
-        label=_('5.	You have left points in your Account Balance, but the round ends. What happens to these points?'),
+        label=_('5.	When the simulation ends, '
+                'what happens to the points left in the Account Balance that you did not Spend?'),
         widget=widgets.RadioSelect
     )
 

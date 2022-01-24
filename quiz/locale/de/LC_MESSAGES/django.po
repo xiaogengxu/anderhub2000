@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-13 18:59+0200\n"
-"PO-Revision-Date: 2021-12-13 19:02+0200\n"
+"POT-Creation-Date: 2022-01-24 11:20+0200\n"
+"PO-Revision-Date: 2022-01-24 11:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,99 +23,115 @@ msgid "1.\tWhat decision do you make on each round?"
 msgstr "1. Welche Entscheidungen fallen Sie in den jeweiligen Runden?"
 
 #: .\quiz\models.py:50
-msgid "2.\tWhat is the minimum length of a round?"
-msgstr "2. Wie viele Perioden dauert eine Runde mindestens?"
+msgid "2.\tWhat is decided by the card color drawn from deck?"
+msgstr "2. Was bestimmt die Farbe der Karte, die gezogen wird?"
 
 #: .\quiz\models.py:55
 msgid "3.\tWhat is the maximum length of a round?"
 msgstr "3. Wie viele Perioden dauert eine Runde maximal?"
 
 #: .\quiz\models.py:60
-msgid "4.\tHow many points can you spend in each period?"
+msgid "4.\tWhat is your maximum Spending (in points) in each period?"
 msgstr "4. Wie viele Punkte können Sie maximal in einer Periode ausgeben?"
 
 #: .\quiz\models.py:65
 msgid ""
-"5.\tYou have left points in your Account Balance, but the round ends. What "
-"happens to these points?"
+"5.\tWhen the simulation ends, what happens to the points left in the Account "
+"Balance that you did not Spend?"
 msgstr ""
-"5. Was passiert mit den Punkten auf Ihrem Konto, wenn die Runde zu Ende geht?"
+"5. Was passiert mit den Punkten auf Ihrem Konto, die Sie nicht ausgeben, "
+"wenn die Runde zu Ende geht?"
 
-#: .\quiz\models.py:70
+#: .\quiz\models.py:71
 msgid "6.\tWhat happens in the Period 2?"
 msgstr "6. Was passiert in Periode 2?"
 
-#: .\quiz\pages.py:25 .\quiz\pages.py:138
+#: .\quiz\pages.py:25 .\quiz\pages.py:142
 msgid "Preferred deck of cards to use"
 msgstr "Kartendeck"
 
-#: .\quiz\pages.py:26 .\quiz\pages.py:139
+#: .\quiz\pages.py:26 .\quiz\pages.py:143
 msgid "Investment (in Euro)"
 msgstr "Investitionen (in Euros)"
 
-#: .\quiz\pages.py:27 .\quiz\pages.py:140
+#: .\quiz\pages.py:27 .\quiz\pages.py:144
 msgid "Spending (in points)"
 msgstr "Ausgaben (Punken)"
 
-#: .\quiz\pages.py:32 .\quiz\pages.py:37 .\quiz\pages.py:145
-#: .\quiz\pages.py:150
+#: .\quiz\pages.py:32 .\quiz\pages.py:149
+msgid "The card color decides whether you advance to the next period."
+msgstr "Die Farbe der Karte bestimmt, ob die nächste Periode beginnt."
+
+#: .\quiz\pages.py:33 .\quiz\pages.py:150
+msgid "The card color decides your Spending in the next round."
+msgstr "Die Farbe der Karte bestimmt die Ausgaben in der nächsten Runde."
+
+#: .\quiz\pages.py:34 .\quiz\pages.py:151
+msgid "The card color determines your Reward."
+msgstr "Die Farbe der Karte bestimmt die Höhe der Belohnung."
+
+#: .\quiz\pages.py:39 .\quiz\pages.py:156
 msgid "1 period"
 msgstr "1 Periode"
 
-#: .\quiz\pages.py:32 .\quiz\pages.py:37 .\quiz\pages.py:145
-#: .\quiz\pages.py:150
+#: .\quiz\pages.py:39 .\quiz\pages.py:156
 msgid "3 periods"
 msgstr "3 Perioden"
 
-#: .\quiz\pages.py:32 .\quiz\pages.py:37 .\quiz\pages.py:145
-#: .\quiz\pages.py:150
+#: .\quiz\pages.py:39 .\quiz\pages.py:156
 msgid "6 periods"
 msgstr "6 Perioden"
 
-#: .\quiz\pages.py:42 .\quiz\pages.py:155
-msgid "The amount left on the Account Balance at the start of the period"
+#: .\quiz\pages.py:44 .\quiz\pages.py:161
+msgid "The amount on the Account Balance at the start of the period"
 msgstr "Die Punkte in meinem Konto zu Beginn der Periode"
 
-#: .\quiz\pages.py:43 .\quiz\pages.py:156
-msgid "10.92 points"
-msgstr "10.92 Punkte"
+#: .\quiz\pages.py:45 .\quiz\pages.py:162
+msgid "44 points"
+msgstr "44 Punkte"
 
-#: .\quiz\pages.py:44 .\quiz\pages.py:157
-msgid "The same amount spent in the previous period or more"
+#: .\quiz\pages.py:46 .\quiz\pages.py:163
+msgid "The same amount spent in the previous period"
 msgstr "Mindestens die Punkte, die in der letzten Periode ausgegeben wurden"
 
-#: .\quiz\pages.py:49 .\quiz\pages.py:162
+#: .\quiz\pages.py:51 .\quiz\pages.py:168
 msgid "I lose these points."
 msgstr "Ich verliere diese Punkte."
 
-#: .\quiz\pages.py:50 .\quiz\pages.py:163
-msgid "I can spend these points in the next round."
-msgstr "Ich kann diese Punkte in der nächsten Runde ausgeben."
+#: .\quiz\pages.py:52 .\quiz\pages.py:169
+msgid ""
+"If more than 5 points are left in the Account Balance, I will be allowed to "
+"play one extra round to decide what to do."
+msgstr ""
+"Wenn ich mehr als 5 Punkte habe, werde ich eine zusätzliche Runde spielen "
+"können."
 
-#: .\quiz\pages.py:51 .\quiz\pages.py:164
-msgid "These points are automatically converted into Euro Rewards."
+#: .\quiz\pages.py:54 .\quiz\pages.py:171
+msgid ""
+"The points left in the Account Balance are automatically converted into "
+"extra Euro Rewards."
 msgstr ""
 "Diese Punkte werden automatisch in Euros umgerechnet und ich bekomme sie als "
 "Belohnung."
 
-#: .\quiz\pages.py:56 .\quiz\pages.py:169
+#: .\quiz\pages.py:60 .\quiz\pages.py:177
 msgid "I am given new points to increase my Account Balance."
 msgstr "Ich bekomme zusätzliche Punkte."
 
-#: .\quiz\pages.py:57 .\quiz\pages.py:170
+#: .\quiz\pages.py:61 .\quiz\pages.py:178
 msgid "There are no Rewards available regardless of my Spending decision."
 msgstr ""
 "Ich bekomme keine Belohnung unabhängig davon wie viele Punkte ich habe."
 
-#: .\quiz\pages.py:58 .\quiz\pages.py:171
+#: .\quiz\pages.py:62 .\quiz\pages.py:179
 msgid "One of the card decks is automatically removed by the computer."
 msgstr "Der Computer entfernt einen der Kartenstapel."
 
-#: .\quiz\pages.py:65
+#: .\quiz\pages.py:69
 msgid "Please answer all questions."
 msgstr "Bitte beantworten Sie alle Fragen."
 
-#: .\quiz\pages.py:188
+#: .\quiz\pages.py:196
 msgid "Please answer the question."
 msgstr "Bitte beantworten Sie die Frage."
 
@@ -286,7 +302,14 @@ msgstr ""
 msgid "Before you advance to the live round, you need to complete a quiz."
 msgstr "Bevor Sie in das reale Spiel kommen, müssen Sie ein Quiz absolvieren."
 
-#: .\quiz\templates\quiz\Quiz_start.html:15
+#: .\quiz\templates\quiz\Quiz_start.html:14
+msgid ""
+"You must answer all questions. Each question has only one correct answer."
+msgstr ""
+"Sie müssen alle Testfragen im Quiz beantworten. Jede Frage hat nur eine "
+"richtige Antwort."
+
+#: .\quiz\templates\quiz\Quiz_start.html:17
 msgid ""
 "You will be removed from the game, and earn no compensation,\n"
 "            if you give two or more wrong answers."
@@ -294,7 +317,7 @@ msgstr ""
 "Sie werden vom Spiel ausgeschossen werden und damit keine Entschädigung "
 "bekommen, falls Sie zwei oder mehrere Fragen nicht korrekt beantworten."
 
-#: .\quiz\templates\quiz\Quiz_start.html:19
+#: .\quiz\templates\quiz\Quiz_start.html:21
 msgid ""
 "If you need to read the instructions again,\n"
 "        you will find them at the bottom of the page with the test questions."
@@ -479,6 +502,19 @@ msgstr ""
 "Am Ende jeder Runde wird der Computer die Belohnungen (in Euros), die Sie in "
 "den einzelnen Perioden gemäß Ihren Ausgaben erhalten haben, aufaddieren. "
 "Diese Summe wird Ihre Belohnung für die jeweilige Runde sein."
+
+#~ msgid "2.\tWhat is the minimum length of a round?"
+#~ msgstr "2. Wie viele Perioden dauert eine Runde mindestens?"
+
+#~ msgid "4.\tHow many points can you spend in each period?"
+#~ msgstr "4. Wie viele Punkte können Sie maximal in einer Periode ausgeben?"
+
+#~ msgid ""
+#~ "5.\tYou have left points in your Account Balance, but the round ends. "
+#~ "What happens to these points?"
+#~ msgstr ""
+#~ "5. Was passiert mit den Punkten auf Ihrem Konto, wenn die Runde zu Ende "
+#~ "geht?"
 
 #~ msgid "Preferred type of Spinning Wheel"
 #~ msgstr "Glücksrad"
